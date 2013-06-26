@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.importWizards">
+      <category
+            id="hornetq_project_gen.importWizards.sampleCategory"
+            name="Import HornetQ Resources">
+      </category>
+      <wizard
+            category="hornetq_project_gen.importWizards.sampleCategory"
+            class="hornetq_project_gen.importWizards.hornetq.ImportWizard"
+            icon="icons/hornetq32.png"
+            id="hornetq_project_gen.importWizards.hornetq.ImportWizard"
+            name="Import HornetQ Source">
+         <description>
+            Import from a local hornetq git repository
+         </description>
+      </wizard>
+      <wizard
+            category="hornetq_project_gen.importWizards.sampleCategory"
+            class="hornetq_project_gen.importWizards.wildfly.WildFlyImportWizard"
+            icon="icons/sample.gif"
+            id="hornetq_project_gen.importWizards.wildfly.ImportWizard"
+            name="Import WildFly Source">
+         <description>
+            Import WildFly Source Code
+         </description>
+      </wizard>
+   </extension>
+   <extension
+         id="hqbuilder"
+         name="HornetQ Specific Builder"
+         point="org.eclipse.core.resources.builders">
+      <builder>
+         <run
+               class="hornetq_project_gen.hornetq.HornetQBuilder">
+         </run>
+      </builder>
+   </extension>
+
+</plugin>
