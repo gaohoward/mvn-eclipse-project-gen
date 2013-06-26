@@ -33,6 +33,7 @@ public class MavenModelHelperV23x extends MavenModelHelper {
         ignoredLinks.add("distribution");
         ignoredLinks.add("examples");
         ignoredLinks.add("hornetq-rest/src/test/java");
+        ignoredLinks.add("hornetq-rest/hornetq-rest/target/generated-sources");
 
         addExcludedDep("org.jboss.logging", "jboss-logging-spi", "2.1.0.GA");
     }
@@ -51,6 +52,10 @@ public class MavenModelHelperV23x extends MavenModelHelper {
            IClasspathEntry newPath = JavaCore.newLibraryEntry(folder.getFullPath(), null, null);
            sources.put(folder.getFullPath().toOSString(), newPath);
         }
+
+        addSingleClassFromTargetDir("hornetq-jms/target/classes/org/hornetq/jms/HornetQJMSLogger.class", folder);
+        addSingleClassFromTargetDir("hornetq-jms/target/classes/org/hornetq/jms/HornetQJMSBundle.class", folder);
+        addSingleClassFromTargetDir("hornetq-core/target/classes/org/hornetq/core/server/HornetQLogger.class", folder);
     }
 
     /**

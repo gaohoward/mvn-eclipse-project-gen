@@ -139,6 +139,8 @@ public abstract class MavenModelHelper {
    public void getDependencies(Map<String, IClasspathEntry> sources) {
       DependencyManagement manager = model.getDependencyManagement();
       List<Dependency> dependencies = manager.getDependencies();
+
+      List<String> modules = model.getModules();
       
       addExtraDependencies(dependencies);
 
@@ -150,6 +152,8 @@ public abstract class MavenModelHelper {
          String artId = d.getArtifactId();
          String version = d.getVersion();
          String sysPath = d.getSystemPath();
+
+         System.out.println("dep location: " + d.getSystemPath());
 
          version = this.resolveVar(version);
 

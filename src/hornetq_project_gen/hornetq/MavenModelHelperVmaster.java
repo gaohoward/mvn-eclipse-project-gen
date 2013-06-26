@@ -53,6 +53,7 @@ public class MavenModelHelperVmaster extends MavenModelHelper {
 
        addSingleClassFromTargetDir("hornetq-jms/target/classes/org/hornetq/jms/HornetQJMSLogger.class", folder);
        addSingleClassFromTargetDir("hornetq-jms/target/classes/org/hornetq/jms/HornetQJMSBundle.class", folder);
+       addSingleClassFromTargetDir("hornetq-core/target/classes/org/hornetq/core/server/HornetQLogger.class", folder);
     }
 
     /**
